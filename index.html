@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingüino</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+            margin: 0;
+        }
+        .penguin {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: #000;
+            border-radius: 50%;
+            padding:40px;
+        }
+        .penguin::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 30px;
+            width: 170px;
+            height: 140px;
+            background-color: #fff;
+            border-radius: 80px;
+        }
+        .head {
+            position: absolute;
+            top: -135px;
+            left: 30px;
+            width: 170px;
+            height: 170px;
+            background-color: #000;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .eye {
+            position: absolute;
+            top: 30px;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .eye.left {
+            left: 25px;
+            top: 50px;
+        }
+        .eye.right {
+            right: 25px;
+            top: 50px;
+        }
+        .pupil {
+            width: 15px;
+            height: 15px;
+            background-color: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+        .pupil.left {
+            left: 5px;
+        }
+        .pupil.right {
+            right: 5px;
+        }
+        .beak {
+            position: absolute;
+            top: 97px;
+            left: 62.5px;
+            width: 45px;
+            height: 25px;
+            background-color: orange;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            z-index: 1;
+        }
+        .flipper {
+            position: absolute;
+            width: 50px;
+            height: 130px;
+            background-color: #000000;
+            border-radius: 50px;
+            margin-top: 5px;
+            z-index: -1;
+            flex-direction: var();
+        }
+        .flipper.left {
+            top: 35px;
+            left: -30px;
+            transform: rotate(35deg);
+        }
+        .flipper.right {
+            top: 35px;
+            right: -30px;
+            transform: rotate(-35deg);
+        }
+        .foot {
+            position: absolute;
+            width: 80px;
+            height: 50px;
+            background-color: orange;
+            border-radius: 30px;
+        }
+        .foot.left {
+            bottom: -20px;
+            left: 20px;
+        }
+        .foot.right {
+            bottom: -20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="penguin">
+        <div class="head">
+            <div class="eye left">
+                <div class="pupil left"></div>
+            </div>
+            <div class="eye right">
+                <div class="pupil right"></div>
+            </div>
+            <div class="beak"></div>
+        </div>
+        <div class="flipper left"></div>
+        <div class="flipper right"></div>
+        <div class="foot left"></div>
+        <div class="foot right"></div>
+    </div>
+</body>
+</html>
